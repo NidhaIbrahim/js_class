@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/js/bootstrap.bundle.min.js">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1 align="center"> To-Do List </h1>
+      </div>
+      <center>
+        <div style="width:50%">
+          <div class="mb-3">
+            <label for="txtTask" class="form-label"> Task : </label>
+            <input type="text" class="form-control" id="txtTask" placeholder="Enter Task here">
+          </div>
+          <div class="mb-3">
+            <label for="txtAreaDescription" class="form-label">Description</label>
+            <textarea class="form-control" id="txtAreaDescription" rows="3"></textarea>
+          </div>
+          <div class="mb-3">
+            <button type="button" class="btn btn-primary btn-lg" onclick="AddToTable()">ADD</button>
+          </div>
+    
+        </div>
+    
+        <table class="table table-dark table-striped" id="tableValue">
+          <tr>
+            <th scope="col" class="w-25">SlNo:</th>
+            <th scope="col" class="w-25" >Date</th>
+            <th scope="col" class="w-25">Task</th>
+            <th scope="col" class="w-25">Description</th>
+            <th scope="col" class="w-25">Status</th>
+            <th scope="col" class="w-25">Complete</th>
+            <th scope="col" class="w-25">Delete</th>
+            <th scope="col" class="w-25">Edit</th>
+          </tr>
+    
+        </table>
+      </center>
+</body>
+
+</html>

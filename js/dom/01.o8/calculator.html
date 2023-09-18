@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <input type="text" placeholder="enter number1" id="num1"> <br /><br />
+    <input type="text" placeholder="enter number2" id="num2"> <br /><br />
+    <select name="operators" id="operator">
+        <option value="*">multiply</option>
+        <option value="/">divide</option>
+        <option value="-">subtract</option>
+        <option value="+">add</option>
+        <option value="%">mode</option>
+    </select><br /><br />
+    <button type="button" onclick="solve()">solve</button><br /><br />
+    <span id="result"></span>
+
+    <script>
+        function solve() {
+            var output = "";
+            var a = Number(document.getElementById('num1').value);
+            var b = Number(document.getElementById('num2').value);
+            var op = document.getElementById('operator').value;
+            // console.log(a,b,op);
+            switch(op){
+                case '*' : output = (a * b);
+                break;
+                case '/' : output = (a / b);
+                break;
+                case '-' : output = (a - b);
+                break;
+                case '+' : output = (a + b);
+                break;
+                case '%' : output = (a % b);
+                break;
+                default: output = "invalid";
+            }
+            document.getElementById("result").innerHTML = "Result = " + output;
+        }
+    </script>
+</body>
+</html>

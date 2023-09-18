@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="jsvalidation.js"></script>
+    <title>Form</title>
+</head>
+
+<body>
+    <div class="container w-50">
+
+        <form >
+            <div class="mb-3">
+                <label for="fname" class="form-label">Name</label>
+                <input type="text" placeholder="Name" name="fname" id="fname" class="form-control">
+                <span id="name_err"></span>
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" placeholder="Age" name="age" id="age" class="form-control"> 
+                <span id="age_err"></span>
+            </div>
+            <div class="mb-3">
+                <label for="gender">Gender :</label>
+                <div class="form-check">
+                    <label for="male" class="form-check-label">Male</label>
+                    <input type="radio" name="gender" id="male" value="male" class="form-check-input">
+                </div>
+                <div class="form-check">
+                    <label for="female" class="form-check-label">Female</label>
+                    <input type="radio" name="gender" id="female" value="female" class="form-check-input">
+                </div>
+                <span id="gender_err"></span>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="text" placeholder="Email Address" id="email" name="email" class="form-control">
+                <span id="email_err"></span>
+            </div>
+            <div class="mb-3">
+                <label for="contact" class="form-label">Phone Number</label>
+                <input type="number" placeholder="Phone number" id="contact" name="contact" class="form-control">
+                
+                <span id="contact_err"></span>
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">User Name</label>
+                <input type="text" placeholder="User Name" id="username" name="username" class="form-control">
+                <span id="username_err"></span>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" placeholder="Password" id="password" name="password" class="form-control">
+                <span id="password_err"></span>
+            </div>
+            <div class="mb-3">
+                <label for="confirm" class="form-label">Confirm Password</label>
+                <input type="password" placeholder="Confirm  Password" id="confirm" name="confirm" class="form-control">
+                <span id="confirm_err"></span>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="validate()">Submit</button>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

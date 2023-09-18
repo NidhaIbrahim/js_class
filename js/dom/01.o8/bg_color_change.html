@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bg color change</title>
+    <style>
+        .containerbox {
+            background-color: rgb(159, 159, 217);
+            border: solid 5px rgb(172, 118, 118);
+            /* color: #df5f5f; */
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containerbox" id="box"></div><br /><br />
+    <select name="colors" id="bgcolors" onchange="changes()">
+        <option value="">SELECT COLOR</option>
+        <option value="1">red</option>
+        <option value="2">green</option>
+        <option value="3">yellow</option>
+        <option value="4">pink</option>
+        <option value="5">beige</option>
+    </select>
+    <script>
+        function changes() {
+
+            var box = document.getElementById('box');
+            var color1 = Number(document.getElementById('bgcolors').value);
+            console.log(color1)
+            switch (color1) {
+                case 1:
+                    box.style.backgroundColor = "#df5f5f";
+                    break;
+                case 2:
+                    box.style.backgroundColor = "#a1e9a1";
+                    break;
+                case 3:
+                    box.style.backgroundColor = "#caca66";
+                    break;
+                case 4:
+                    box.style.backgroundColor = "#ffc0cb";
+                    break;
+                case 5:
+                    box.style.backgroundColor = "#f5f5dc";
+                    break;
+
+                default:
+                    document.write("please select a color");
+            }
+        }
+    </script>
+</body>
+
+</html>

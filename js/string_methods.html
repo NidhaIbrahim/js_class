@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string methods</title>
+</head>
+<body>
+    <h1>String methods</h1>
+    <script>
+        var str = "Hello World";
+        console.log(str);
+        console.log(str.length);
+        console.log(str.toUpperCase());
+        console.log(str.toLowerCase());
+        var fname = "Nidha";
+        var lname = "Ibrahim";
+        var name = fname.concat(" " + lname,", " + str);
+        console.log(name);
+
+        var str1 = "           nidha         ";
+        console.log(str1.trim() + " " + fname);
+        console.log(str1 + fname);
+        console.log(str1.trimStart() + fname);
+        console.log(str1.trimEnd() + " " + fname);
+
+        console.log(str.split(""));
+        console.log(str.split(" "));
+        console.log(str.split(","));
+        console.log(str.split("|"));
+
+        var alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        // console.log(alphabets.slice(0,5));
+        // console.log(alphabets.slice(20));
+        // console.log(alphabets.slice(-5));
+        // console.log(alphabets.slice(-10,-5));
+
+        console.log(alphabets.substring(0,5));
+        console.log(alphabets.substring(20));
+        // substring() negative values not accepted, only take them as zero. 
+        console.log(alphabets.substring(-5));
+        console.log(alphabets.substring(-10,-5));
+    </script>
+
+</body>
+</html>

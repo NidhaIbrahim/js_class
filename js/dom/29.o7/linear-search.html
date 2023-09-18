@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linear search</title>
+</head>
+<body>
+    <input type="text" placeholder="enter items seperated by common" id="a"/>
+    <input type="number" placeholder="value to be searched" id="b"/>
+    <button type="button" onclick="search()">Submit</button>
+    <span id="result"></span>
+    <script>
+        function search() {
+            var found = "";
+            var item = document.getElementById('a').value;
+            var arr = item.split(',');
+            var n = arr.length;
+            var searchitem = document.getElementById('b').value;
+            for(i = 0; i<n; i++){
+                if(searchitem == arr[i]){
+                    found += arr[i] + " found in " + i + " th position";
+                }
+            }
+            document.getElementById("result").innerHTML = found;
+        }
+    </script>
+</body>
+</html>

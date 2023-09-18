@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>binary search</title>
+</head>
+
+<body>
+    <input type="text" placeholder="enter items seperated by commas in ascending order" id="x" />
+    <input type="number" placeholder="value to be searched" id="y" />
+    <button type="button" onclick="search()">Submit</button>
+    <span id="result"></span>
+    <script>
+        function search() {
+            var itemfound = ""
+            var item = document.getElementById('x').value;
+            var arr = item.split(',');
+            var n = arr.length;
+            var target = document.getElementById('y').value;
+
+            let left = 0; 
+            let right = arr.length - 1;
+
+            while(left <= right) {
+                let mid = Math.floor((left + right) / 2);
+                if(target < arr[mid]){
+                    right = mid - 1;
+                }
+                else if (target == arr[mid]) {
+                    found += arr[mid] + " found in " + mid + " th position"
+                }
+                else{
+                   left = mid + 1; 
+                }
+            }
+            document.getElementById('result').innerHTML = found;
+        }
+    </script>
+</body>
+
+</html>

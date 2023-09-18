@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for in loop</title>
+</head>
+<body>
+    <script>
+        var student = { name:"nidha" , age:21 , place:"lorem"};
+        for(prop in student){
+            console.log(prop + " is " + student[prop]);
+        }
+
+        var hardware = ['keyboard','mouse','printer'];
+        for(item of hardware){
+            console.log(item);
+        }
+    </script>
+</body>
+</html>

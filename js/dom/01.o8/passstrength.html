@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password strength</title>
+</head>
+<body>
+    <input type="text" placeholder="password" id="password" onkeyup="strength()"><br><br>
+    <span id="length"></span><br><br>
+    <span id="uppercase"></span><br><br>
+    <span id="digits"></span><br><br>
+    <span id="lowercase"></span><br><br>
+    <span id="special"></span>
+    <script>
+        function strength() {
+            var pass = document.getElementById('password').value;
+
+            // uppercase
+            if(pass.length >= "8" && pass.length <= "12"){
+                document.getElementById("length").innerHTML = "strong password";
+            }
+            else if (pass.length < "8"){
+                document.getElementById("length").innerHTML = "weak password";
+            }
+            else{
+                document.getElementById("length").innerHTML = "very strong password";
+            }
+
+            if(pass[0] >= "A" && pass[0] <= "Z"){
+                document.getElementById("uppercase").innerHTML = "first letter is capital!";
+            }
+            else{
+                document.getElementById("uppercase").innerHTML = "first letter is not capital!";
+            }
+
+            // digits
+            digit = 0
+            for(i=0;i<pass.length;i++){
+               if(pass[i] >= "0" && pass[i] <= "9"){
+                digit = 1
+               break;
+               }
+            }
+            if(digit == 1){
+                document.getElementById("digits").innerHTML = "there are digits present";
+            }
+            else{
+                document.getElementById("digits").innerHTML = "there are no digits present";
+            }
+
+            // lowercase
+            lower = 0
+            for(i = 0;i<pass.length;i++){
+               if(pass[i] >= "a" && pass[i] <= "z"){
+                lower = 1
+               break;
+               }
+            }
+            if(lower == 1){
+                document.getElementById("lowercase").innerHTML = "there are lowercase alphabets";
+            }
+            else{
+                document.getElementById("lowercase").innerHTML = "there are no lowercase alphabets";
+            }
+
+            // specialcharecters
+            if(/^[a-zA-Z0-9]*$/.test(pass) == false){
+                document.getElementById("special").innerHTML = "contains special charecters";
+            }
+            else{
+                document.getElementById("special").innerHTML = "do not contain special charecters";
+            }
+        }
+    </script>
+</body>
+</html>

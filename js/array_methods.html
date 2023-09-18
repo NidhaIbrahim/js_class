@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array methods</title>
+</head>
+<body>
+    <h1>hey</h1>
+    <script>
+        var fruits = ["mango", "kiwi", "watermelon", "orange"];
+        var arr = ["aa","bb","cc","dd","ee"];
+
+        console.log(fruits);
+
+        console.log(fruits.length);
+
+        console.log(fruits.toString());
+
+        console.log(fruits.join());
+        console.log(fruits.join(""));
+        console.log(fruits.join(" "));
+        console.log(fruits.join(" * "));
+        console.log(fruits.join(" - "));
+
+        console.log(fruits.pop());
+        console.log(fruits.toString());
+
+        console.log(fruits.push());
+        console.log(fruits.push("banana"));
+        console.log(fruits.toString());
+
+        console.log(fruits.shift());
+        console.log(fruits.toString());
+
+        console.log(fruits.unshift());
+        console.log(fruits.unshift("pineapple"));
+        console.log(fruits.toString());
+
+        console.log(fruits.splice(2,2,"litchi","cherry","dates","grapefruit"));
+        // splice(positionto begin removing elemts from, number of elemnts to be removed,if adding any new elements add here in double qoutes);
+        console.log(fruits.toString());
+
+        console.log(fruits.slice(3));
+        // slice(splits the array from that given index number into new array temporarily)
+        console.log(fruits.toString());
+
+        console.log(fruits.sort());
+        console.log(fruits.reverse());
+
+        console.log(fruits.concat(arr));
+    </script>
+</body>
+</html>

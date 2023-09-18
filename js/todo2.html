@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+  <div>
+    <h1 align="center"> To-Do List </h1>
+  </div>
+  <center>
+    <div style="width:50%">
+      <div class="mb-3">
+        <label for="txtTask" class="form-label"> Task : </label>
+        <input type="text" class="form-control" id="txtTask" placeholder="Enter Task here">
+      </div>
+      <div class="mb-3">
+        <label for="txtAreaDescription" class="form-label">Description</label>
+        <textarea class="form-control" id="txtAreaDescription" rows="3"></textarea>
+      </div>
+      <div class="mb-3">
+        <button type="button" class="btn btn-primary btn-lg" onclick="AddToTable()">ADD</button>
+      </div>
+
+    </div>
+
+    <table class="table table-dark table-striped" id="tableValue">
+      <tr>
+        <th scope="col" class="w-25">SlNo:</th>
+        <th scope="col" class="w-25" >Date</th>
+        <th scope="col" class="w-25">Task</th>
+        <th scope="col" class="w-25">Description</th>
+        <th scope="col" class="w-25">Status</th>
+        <th scope="col" class="w-25">Complete</th>
+        <th scope="col" class="w-25">Delete</th>
+        <th scope="col" class="w-25">Edit</th>
+      </tr>
+
+    </table>
+  </center>
+
+
+  <script>
+    var i = 1;
+    function AddToTable() {
+      var task = document.getElementById('txtTask').value;
+      var description = document.getElementById('txtAreaDescription').value;
+      var tableID = document.getElementById('tableValue');
+
+      date = new Date();
+
+      console.log(date);
+      console.log(date.toDateString())
+
+      var newRow = tableID.insertRow();
+
+      newRow.setAttribute("id", i)
+
+      var SlNo = newRow.insertCell();
+      var task_date = newRow.insertCell();
+      var task_name = newRow.insertCell();
+      var desc = newRow.insertCell();
+      var status = newRow.insertCell();
+      var complete = newRow.insertCell();
+      var delete_col = newRow.insertCell();
+      var edit_col = newRow.insertCell();
+
+      SlNo.innerHTML = i++;
+      task_date.innerHTML = date.toDateString();
+      task_name.innerHTML = task;
+      desc.innerHTML = description;
+
+      var btn = document.createElement("BUTTON");
+      btn.innerHTML = "COMPLETE";
+      btn.style.color = "black";
+
+      btn.onclick = function complete() {
+        status.innerHTML = "COMPLETED";
+        btn.disabled = true;
+      }
+      complete.appendChild(btn);
+
+      var delBtn = document.createElement("BUTTON");
+      delBtn.innerHTML = "DELETE";
+      delBtn.style.color = "black";
+
+      delBtn.addEventListener("click", function handleClick(event) {
+        var delId = event.target.parentElement.parentElement.id;
+        element = document.getElementById(delId);
+        element.remove();
+      });
+
+      delete_col.appendChild(delBtn);
+
+
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id="heading">Cybersquare</h1>
+    <p class="content">Lorem ipsum dolor sit amet.</p>
+    <p class="content">Lorem ipsum dolor sit amet consectetur.</p>
+    <input type="button" onclick="change()" value="Click Here">
+
+    <script>
+        h = document.getElementById('heading');
+        console.log(h);
+        p = document.getElementsByTagName('p');
+        console.log(p);
+        p1 = document.getElementsByClassName('content');
+        console.log(p1);
+        function change() {
+            h1.innerHTML = "Cybersquare - Users to Creators" ;
+        }
+    </script>
+</body>
+</html>

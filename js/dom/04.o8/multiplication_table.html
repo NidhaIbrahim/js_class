@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication table</title>
+</head>
+
+<body>
+    <!-- <script>
+        var n = prompt("Enter the number : ");
+        var product = 1;
+        document.write("<h1> Multiplication table of " + n + "</h1><br/>");
+        for(i = 1;i <= 10;i++){
+            product = n * i;
+            document.write(n + " x " + i + " = " + product);
+            document.write("<br />");
+        }
+        document.write("<br />");
+    </script> -->
+
+
+    <script>
+        document.write("<h2> Multiplication table upto 10 </h2> ");
+        for (n = 1; n <= 10; n++) {
+            document.write("<h3> Multiplication table of " + n + "</h3>");
+            for (i = 1; i <= 10; i++) {
+                product = n * i;
+                document.write(n + " x " + i + " = " + product);
+                document.write("<br />");
+            }
+        }
+    </script>
+</body>
+
+</html>

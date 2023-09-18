@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            align-content: center;
+        }
+
+        #studentData {
+            width: 75%;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container" align="center">
+        <h1>Student Data</h1>
+        <table>
+            <form id="studentform">
+                <tr>
+                    <td><label for="name">Name : </label></td>
+                    <td><input type="text" id="fname" name="fname"></td>
+                </tr>
+                <tr>
+                    <td><label for="standard">Standard : </label></td>
+                    <td><input type="text" id="standard" name="standard"></td>
+                </tr>
+                <tr>
+                    <td><label for="rollno">Roll No : </label></td>
+                    <td><input type="number" id="rollno" name="rollno"></td>
+                </tr>
+                <tr>
+                    <td><label for="locality">Locality : </label></td>
+                    <td><input type="text" id="locality" name="locality"></td>
+                </tr>
+                <tr>
+                    <td><label for="dob">DOB :</label></td>
+                    <td><input type="date" id="dob" name="dob"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="submit" style="margin: 4px 70px;">Add Student</button></td>
+                </tr>
+            </form>
+        </table>
+        <br />
+        <br>
+        <table id="studentData">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Standard</th>
+                    <th>Roll No</th>
+                    <th>Locality</th>
+                    <th>Date of Birth</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const studentForm = document.getElementById("studentform");
+        const studentTable = document.getElementById("studentData").getElementsByTagName("tbody")[0];
+        studentForm.addEventListener("submit",function (event) {
+            event.preventDefault();
+
+        const fname = document.getElementById("fname").value;
+        const standard = document.getElementById("standard").value;
+        const rollno = document.getElementById("rollno").value;
+        const locality = document.getElementById("locality").value;
+        const dob = document.getElementById("dob").value;
+
+        const student = {fname,standard,rollno,locality,dob};
+
+        let students = JSON.parse(localStorage.getItem("students")) || [];
+        students.push(student);
+        localStorage.setItem("students",JSON.stringify(students));
+
+
+        const row = studentTable.insertRow();
+        const namecol = row.insertCell();
+        const standardcol = row.insertCell();
+        const rollnocol = row.insertCell();
+        const localitycol = row.insertCell();
+        const dobcol = row.insertCell();
+        namecol.innerHTML = fname;
+        standardcol.innerHTML = standard;
+        rollnocol.innerHTML = rollno;
+        localitycol.innerHTML = locality;
+        dobcol.innerHTML = dob;
+
+        studentForm.reset();
+    })
+
+    const students = JSON.parse(localStorage.getItem("students")) || [];
+    students.forEach((student) => {
+        
+        const row = studentTable.insertRow();
+        const namecol = row.insertCell();
+        const standardcol = row.insertCell();
+        const rollnocol = row.insertCell();
+        const localitycol = row.insertCell();
+        const dobcol = row.insertCell();
+
+        namecol.innerHTML = student.fname;
+        standardcol.innerHTML = student.standard;
+        rollnocol.innerHTML = student.rollno;
+        localitycol.innerHTML = student.locality;
+        dobcol.innerHTML = student.dob;
+    });
+    </script>
+</body>
+
+</html>

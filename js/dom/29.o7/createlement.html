@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create element</title>
+    <style>
+        .demo{
+            background-color: blueviolet;
+            color: azure;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // var p = document.createElement('p');
+        // p.innerHTML = '<h1>hi</h1>';
+        // console.log(p);
+        // document.write(p);    - does not work
+        // adding attribute
+        // p.setAttribute("id",'ab');
+        // document.body.appendChild(p);
+
+        var p = document.createElement('p');
+        var head = document.createElement('h1');
+        p.appendChild(head); 
+        head.innerHTML = 'lorem';
+        // adding class
+        p.classList.add('demo');
+        // removing class 
+        p.classList.remove('demo');
+        // adding style
+        p.style.color = 'yellow';
+        document.body.appendChild(p);
+        console.log(p);
+    </script>
+</body>
+</html>

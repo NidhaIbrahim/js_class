@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>divisible by each other</title>
+</head>
+<body>
+    <script>
+        // divisible by eachother
+        
+        var a = prompt("Enter the first number :");
+        var b = prompt("Enter the second number :");
+
+        if(a % b == 0){
+            console.log(a + " divisible by " + b);
+        }
+        else{
+            console.log(a + " not divisible by " + b);
+        }
+
+        if(b % a == 0){
+            console.log(b + " is divisible by " + a);
+        }
+        else{
+            console.log(b + " is not divisible by " + a);
+        }
+    </script>
+</body>
+</html>

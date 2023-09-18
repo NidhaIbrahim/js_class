@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variables</title>
+</head>
+<body>
+    <script>
+        studentid= 10;
+        admissionnbr= 100;
+        name= "NIDHA";
+        // subjects=["english","maths","science"];
+        marks= [50,45,40];
+        student={"name":"ashwin", "age":19, "place":"mukkam"};
+        document.write("Student ID is ", studentid );
+        document.write("Student ID is "+ studentid );
+        document.write("<br>");
+        document.write("Admission Number is "+ admissionnbr);
+        document.write("<br>");
+        document.write("<h1>"+ name +"</h1>");
+        document.write("<br>");
+        document.write("marks are :"+ marks);
+        document.write("<br>");
+        document.write("Total marks are : ", marks[0]+marks[1]+marks[2]);
+        document.write("<br>");
+        document.write("Student details: " , student.name ,"  ", student.age,"  ", student.place);
+
+        console.log(typeof(studentid));
+        console.log(typeof(name));
+        console.log("type of variable student is: ", typeof(student));
+
+    </script>
+</body>
+</html>

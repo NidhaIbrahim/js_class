@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+
+<body>
+    <input type="button" onclick="clickevent()" value="click here" />
+    <p onmouseover="mouseoverevent()">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius enim ab mollitia, facere ullam alias maiores odio
+        porro ad eum.
+    </p>
+    <input type="text" value="Lorem ipsum dolor" onchange="onchangeevent(this.value)" />
+
+    <script>
+        function clickevent() {
+            document.write("button is clicked!");
+        }
+
+        function mouseoverevent() {
+            alert("mouse over me!");
+        }
+
+        function onchangeevent(val) {
+            alert("changed value is " + val);
+        }
+    </script>
+
+</body>
+
+</html>

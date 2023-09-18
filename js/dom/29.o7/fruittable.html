@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        a = new Array();
+        a[0]=[]
+        a[1]=[]
+        // a[i] = [ [ a[i] ] , [ a[i] ] ];
+        sum = 0;
+        var n = prompt("Enter the number of fruits:");
+        for (i = 0; i < n; i++) {
+            a[0][i] = prompt("names of fruit: ");
+            a[1][i] = parseInt(prompt("price of fruit: "));
+            sum = sum + a[1][i];
+        }
+        document.write("<table border=2>");
+        document.write("<tr><th>Fruit</th><th>Price</th></tr>");
+        for (i = 0; i < n; i++) {
+            document.write("<tr><td>" + a[0][i] + "</td><td>" + a[1][i] + "</td></tr>");
+        }
+        document.write("<tr><td>Total</td><td>" + sum + "</td></tr>");
+        document.write("</table>");
+    </script>
+</body>
+
+</html>

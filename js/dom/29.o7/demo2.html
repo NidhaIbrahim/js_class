@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="fname" name="fname" id="fname1"/>
+    <button type="button" value="submit" onclick="send()">submit</button>
+    <span id="result"></span>
+    <p class="lorem"></p>
+    <p class="lorem"></p>
+    <script>
+        function send() {
+            var val = document.getElementById('fname1').value;
+            console.log(val);
+            document.getElementById('result').innerHTML=val.length;
+            var head = document.getElementsByClassName('lorem')[0].innerHTML = 'hey';
+            console.log(head);
+            // document.getElementById('lorem').innerHTML = 'hai';
+        }
+    </script>
+</body>
+</html>
